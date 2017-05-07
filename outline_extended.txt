@@ -1,0 +1,144 @@
+1. Indicators of compromise and threat intel
+
+- The threat intel business
+- cost of feeds
+- quality of feeds, quality measurement
+- Threat intel vs. AV as an industry, tweet from Mara 30.4.
+--- An industry working with the same broken model for 20 years
+--- Another industry picking up a broken model for the next 20 years?
+- Referencing: Dino Dai Zovi, BlackHat Asia; Halvar, BlackHat Asia '17;
+False Flag paper, Kaspersky VirusBulletin '16; Binary Handwriting, Morgan & me Blackhat '15
+
+2. How to evaluate an indicator
+
+- cost for buying
+- time of relevance
+- ease of change for an attacker
+- ease of application by user
+=> two price tags
+
+3. Indicator studies
+
+- defining types of indicators
+--- Network, binaries, ..
+
+- indicator cost types
+--- extraction
+--- change
+--- application/deployment
+--- resilience and expiry time
+
+- case studies
+--- IP addresses: buying, renting
+--- URLs, domains: hosting, compromised third party servers
+--- Visualizations network stuff
+--- Binaries: refactoring, imports, hashes, strings, bytecode
+
+4. Smart indicators PoC
+
+- extraction cheap
+- change expensive
+- metrics from mailicious [stuff] to describe complexity
+--- how expensive to extract, tool cost, time
+--- resilience: how hard to change, time, know-how, 
+--- measuring information carried by indicators
+
+5. The anti-virus factor: pattern matching & runtime packers
+
+- Short case study on PackRat and commodity malware
+
+6. Integration with MISP
+
+- MISP taxonomy of IoCs
+- objects in MISP
+- feature factories
+- future of indicators: MISP as a de-facto standard
+(what about the others? STIX, TAXII, etc.? talking to Raph)
+
+7. Driving up cost of attack?
+- Proportionality cost to deploy for defense / cost to change for attacker
+- attack is cheap, defense is (more and more) expensive
+- Defense companies need either your money or your data
+
+May the bridges we burn light the way
+Summary and conclusion
+
+
+
+====================================================================
+1. Indicators of compromise and threat intel
+
+Feeds: actionable, contextual data from multiple sources
+format, cost, timelyness; being able to connect data points, see through the noise
+parseable for different products
+Where does the data come from, geographically? How deep does the info go? Hashes vs. strings in binaries
+Command line argument strings do not correlate with lists of domain names
+
+Intelligence requirements of a company
+Feed evaluation of independet reviewers 
+Feeds come in subscriptions, one-year, two, three
+price depends on number of users, number/type of appliance, quality; start at 1500 to 3000 per month
+
+https://www.threatconnect.com/blog/roi-for-threat-intelligence/
+Norse's implosion, Krebs blog
+
+The time black spot: historical data relevance
+The geographical black spot: customers in China deliver intel for China
+The data quality black spot: file hash cant be compared to domain name
+
+History lesson - from AV to TI
+ridiculous how AV sold detection products, with a cumulative TI feed; while TI now sells singular standalone feeds
+AV has always just seen black and white; the road to hell is paved with good intentions
+Threat modeling is an approach to data reduction and specialization
+Cost of feeds nowadays limits coverage, limitations on TI heavier than ever seen in AV
+No independent evaluation results of TI data available as of today
+
+
+https://ayehu.com/calculate-roi-cybersecurity-threat-defense/
+
+Percentage of incidents that lead to an actual breach
+Percentage of threats that are major incidents
+Average cost of a major incident
+Percentage of threats that result in minor incidents
+Average cost of a minor incident
+Average annual growth of security threats and incidents
+
+Average number of incidents per day
+Number of incidents being addressed daily using current resources
+Gap between addressed and unaddressed incidents
+Number of incidents addressed daily using new incident management strategy
+
+
+===
+4. Smart indicators PoC
+
+multi-threading, keylogging, network communication, string density, global variables, graph size, etc.
+research originating from binary handwriting
+Extraction: open source, static, feature factories
+Resistance: compilers, crypters, coding habits; time, geography, depth?
+Scalability: good question..
+Distribution: MISP
+
+Challenge with the more IOCs approach: We can't find the needle in the haystack, so we need more hay!
+False positives in AV world vs. TI world, alerts, priorities, automated investigation approaches
+ROI measurement of ThreatConnect: FP reporting; FP on a file basis vs. on the wire, alerts vs. blocking
+http://whatthefuckismyinformationsecuritystrategy.com/
+
+No machine learning approach in the world will tell you, that one particular compilation timestamp was more important than another
+
+
+===
+5. The anti-virus factor: pattern matching & runtime packers
+
+Packrat as "APT" using runtime packers, repetitive use of packers, infrastructure connects different attacks
+targeted attacks are becoming cheaper as techniques are being reused, APT as a service maybe
+Research on commodity RATs from I4CS Vienna
+Enterprise networks vs. private computers and the runtime packers
+
+
+===
+Summary and conclusion
+
+Money is a factor always, cause even in state sponsored hacking we can say that Somalia definitely doesn't have the same resources to spend as the US
+State hacking tools sold today for compromise of "terrorists" could in the future very well be reused for economical targets or other nation state targets
+reuse is a weak spot, common TI just like AV relies on reuse of code and infrastructure
