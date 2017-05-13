@@ -40,7 +40,7 @@ False Flag paper, Kaspersky VirusBulletin '16; Binary Handwriting, Morgan & me B
 - change expensive
 - metrics from mailicious [stuff] to describe complexity
 --- how expensive to extract, tool cost, time
---- resilience: how hard to change, time, know-how, 
+--- resilience: how hard to change, time, know-how,
 --- measuring information carried by indicators
 
 5. The anti-virus factor: pattern matching & runtime packers
@@ -55,7 +55,13 @@ False Flag paper, Kaspersky VirusBulletin '16; Binary Handwriting, Morgan & me B
 - future of indicators: MISP as a de-facto standard
 (what about the others? STIX, TAXII, etc.? talking to Raph)
 
-7. Driving up cost of attack?
+7. Our theory is that IoCs that are expensive for the attacker to change are better.
+
+- We need some falsifiability though
+- Does misp data show us this?
+- Are some IoCs static while others associated with them get replaced?
+
+8. Driving up cost of attack?
 - Proportionality cost to deploy for defense / cost to change for attacker
 - attack is cheap, defense is (more and more) expensive
 - Defense companies need either your money or your data
@@ -75,7 +81,7 @@ Where does the data come from, geographically? How deep does the info go? Hashes
 Command line argument strings do not correlate with lists of domain names
 
 Intelligence requirements of a company
-Feed evaluation of independet reviewers 
+Feed evaluation of independet reviewers
 Feeds come in subscriptions, one-year, two, three
 price depends on number of users, number/type of appliance, quality; start at 1500 to 3000 per month
 
@@ -135,6 +141,12 @@ targeted attacks are becoming cheaper as techniques are being reused, APT as a s
 Research on commodity RATs from I4CS Vienna
 Enterprise networks vs. private computers and the runtime packers
 
+===
+7. Our theory is that IoCs that are expensive for the attacker to change are better.
+
+Domains changing around binaries
+IP addys changing around phishing mail
+binaries changing around imphashes
 
 ===
 Summary and conclusion
